@@ -1,0 +1,49 @@
+@startuml
+
+entity Hotel  {
+ + id (PK)
+ --
+ # user id (FK)
+ --
+ hotel name
+ hotel email
+ hotel phone
+ hotel address
+}
+
+entity Users  {
+  + id (PK)
+  --
+  # address (FK)
+  --
+  name
+  email
+  mobile
+  password
+  role
+}
+
+entity Address {
++ id (PK)
+--
+flat no
+building name
+landmark
+area
+city
+zip
+state
+}
+
+entity Order  {
+  + id (PK)
+  --
+  # customer id (FK)
+  order date
+}
+
+Users -left{ Order
+Users -right{ Hotel
+Users -right{ Address
+
+@enduml
